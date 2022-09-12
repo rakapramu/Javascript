@@ -1,0 +1,63 @@
+<script>
+    var namaPegawai = "Ridwan";
+    var jabatan = "manager";
+    var status = "menikah";
+
+    if(jabatan == 'manager'){
+        gaPok = 15000000;
+    }else if(jabatan == 'asisten manager'){
+        gaPok = 10000000;
+    }else if(jabatan == 'staff'){
+        gaPok = 5000000;
+    }else{
+        document.write("Bukan pegawai");
+    }
+
+    let TunJab = 0.15 * gaPok;
+    let Bpjs = 0.1 * gaPok;
+    Tunkel = (status == 'menikah') ? 0.2 * gaPok : 0;
+    TotalGaji = gaPok + TunJab + Bpjs + Tunkel;
+
+    document.write(
+        "<h2 align='center'> Nama Pegawai : " + namaPegawai + "</h2>" +
+        "<h2 align='center'> Jabatan : " + jabatan + "</h2>" + 
+        "<h2 align='center'> Status : " + status + "</h2>" 
+    );
+
+    document.write(
+        "<table border='1' align='center' cellpadding='5'>" + 
+
+            "<thead>" +
+                "<tr bgcolor='green'>" +
+                    "<th>Gaji & Tunjangan</th>" +
+                    "<th width='100'>Nominal</th>" +
+                "</tr>" +
+            "</thead>" +
+
+            "<tbody align='center'>" +
+                "<tr>" +
+                    "<td align='left'>Gaji Pokok</td>" +
+                    "<td>" + gaPok + "</td>" +
+                "</tr>" +
+                "<tr>" +
+                    "<td align='left'>Tunjangan Jabatan</td>" +
+                    "<td>" + TunJab + "</td>" +
+                "</tr>" +
+                "<tr>" +
+                    "<td align='left'>BPJS</td>" +
+                    "<td>" + Bpjs + "</td>" +
+                "</tr>" +
+                "<tr>" +
+                    "<td align='left'>Tunjangan Keluarga</td>" +
+                    "<td>" + Tunkel + "</td>" +
+                "</tr>" +
+            "</tbody>" +
+
+            "<tfooter>" +
+                "<tr bgcolor='khaki'>" +
+                    "<th colspan='2'>Total gaji : " + TotalGaji + "</th>" + 
+                "</tr>" +
+            "</tfooter>" +
+        "</table>"
+    );
+</script>
