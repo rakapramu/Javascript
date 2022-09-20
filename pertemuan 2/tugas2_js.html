@@ -1,0 +1,68 @@
+<h3 align="center">DAFTAR PEGAWAI</h3>
+<table align="center" cellpadding="10" cellspacing="1">
+  <thead>
+    <tr bgcolor="#FFD8A9" height="20">
+      <th width="7">No</th>
+      <th width="30">NAMA</th>
+      <th width="50">JABATAN</th>
+      <th width="80">AGAMA</th>
+      <th width="110">GAJI POKOK</th>
+      <th width="180">TUNJANGAN JABATAN</th>
+      <th width="210">TUNJANGAN KESEHATAN</th>
+      <th width="105">GAJI KOTOR</th>
+      <th width="130">ZAKAT PROFESI</th>
+      <th width="140">TAKE HOME PAY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <script language="javascript">
+        var no, warna, agama,
+            gaPok, tunJab, tunKes, gajiKotor,
+            zakatProfesi, takeHome;
+        for(no=1; no<=100; no++){
+            warna = (no % 2 == 0) ? '#5CB8E4' : 'yellow';
+            agama = (no % 2 == 0) ? 'Non muslim' : 'Muslim';
+
+            if(no <= 25 ) jabatan = 'manager';
+            else if(no >= 26 && no <= 50) jabatan = 'asisten manager';
+            else if(no >= 51 && no <= 75) jabatan = 'supervisor';
+            else if(no >= 76 && no <= 100) jabatan = 'staff';
+
+            switch(jabatan){
+              case 'manager': gaPok = 15000000; break;
+              case 'asisten manager' : gaPok = 10000000; break;
+              case 'supervisor' : gaPok = 7000000; break;
+              case 'staff' : gaPok = 4000000; break;
+            }
+
+            //perthitungan gaji dan tunjangan
+            tunJab = 0.2 * gaPok;
+            tunKes = 0.1 * gaPok;
+            gajiKotor = gaPok + tunJab + tunKes;
+
+            //perhitungan zakat
+            zakatProfesi = (agama == 'Muslim' && gajiKotor >= 7000000) ? 0.025 * gajiKotor : 0;
+
+            //perhitungan Take Home Pay
+            takeHome = gajiKotor - zakatProfesi;
+
+            document.write(`
+            <tbody>
+                <tr bgcolor='${warna}' height='20' align='center'>
+                    <td>${no}</td>
+                    <td>Pegawai${no}</td>
+                    <td>${jabatan}</td>
+                    <td>${agama}</td>
+                    <td>${gaPok}</td>
+                    <td>${tunJab}</td>
+                    <td>${tunKes}</td>
+                    <td>${gajiKotor}</td>
+                    <td>${zakatProfesi}</td>
+                    <td>${takeHome}</td>
+                </tr>
+            </tbody>
+        `);
+        }
+    </script>
+  </tbody>
+</table>

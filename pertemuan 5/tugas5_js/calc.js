@@ -9,7 +9,7 @@ function hitung(tombol) {
             if (isNaN(a1) || isNaN(a2)) {
                 alert('harap masukkan angka');
             } else {
-                var total = a1 + a1;
+                var total = a1 + a2;
                 frm.hasil.value = total;
             }
             break;
@@ -17,7 +17,7 @@ function hitung(tombol) {
             if (isNaN(a1) || isNaN(a2)) {
                 alert('harap masukkan angka');
             } else {
-                var total = a1 - a1;
+                var total = a1 - a2;
                 frm.hasil.value = total;
             }
             break;
@@ -25,7 +25,7 @@ function hitung(tombol) {
             if (isNaN(a1) || isNaN(a2)) {
                 alert('harap masukkan angka');
             } else {
-                var total = a1 * a1;
+                var total = a1 * a2;
                 frm.hasil.value = total;
             }
             break;
@@ -33,7 +33,7 @@ function hitung(tombol) {
             if (isNaN(a1) || isNaN(a2)) {
                 alert('harap masukkan angka');
             } else {
-                var total = a1 / a1;
+                var total = a1 / a2;
                 frm.hasil.value = total;
             }
             break;
@@ -41,7 +41,7 @@ function hitung(tombol) {
             if (isNaN(a1) || isNaN(a2)) {
                 alert('harap masukkan angka');
             } else {
-                var total = a1 ** a1;
+                var total = a1 ** a2;
                 frm.hasil.value = total;
             }
             break;
